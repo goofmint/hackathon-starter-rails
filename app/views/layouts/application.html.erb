@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HackathonStarterRails</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% unless user_signed_in? %>
+  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => 'navbar-link' %> / 
+  <%= link_to "Sign in with Twitter",  user_omniauth_authorize_path(:twitter),  :class => 'navbar-link' %> /
+  <%= link_to "Sign up with ID/Password", new_user_registration_path %>
+<% else %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
