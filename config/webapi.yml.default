@@ -1,0 +1,14 @@
+development:
+  facebook:
+    key: key
+    secret: secret
+  twitter:
+    key: key
+    secret: secret
+production:
+  facebook:
+    key: key
+    secret: secret
+  twitter:
+    key: key
+    secret: secret
